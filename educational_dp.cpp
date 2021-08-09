@@ -11,7 +11,6 @@ int f(int n){
                                     array ,say cache array cache[n]; (the array sort of memorizes the values computed 
                                     and store it to prevent us from overcomputing.) */
 
-
 int cache[50];
 
 int f(int n){
@@ -30,6 +29,8 @@ void solve(){
     }
 }
 
+
+
 void solve1(){
     int n=20;
     int f[50];
@@ -40,10 +41,11 @@ void solve1(){
     }
 }
 
+
 void solve2(){
     int n=20;
     int dp[50]={0};
-    dp[0]=0,dp[1]=1;                 //we say dp[i] contributes to dp[i+1] and dp[i+2]s
+    dp[0]=0,dp[1]=1;                 //we say dp[i] contributes to dp[i+1] and dp[i+2]
                                     //Iterative dp ,push dp is used
     for(int i=0;i<=20;i++){
         for(int j=i+1;j<=i+2;j++){
@@ -56,6 +58,7 @@ void solve2(){
 int main() {
    solve1();}
 
-/*IN DP ,always think of :   1.STATE        ->   f(i)
-                         ,   2.TRANSITION   ->  f(n-1)+ f(n-2)  
-                             3.Base conditions and answer       */
+/*IN DP ,always think of :   1.STATE            ->   f(i)
+                             2.TRANSITION       ->  f(n-1)+ f(n-2)  
+                             3.Base conditions  -> f(1) =1 and f(2)=1
+                             4.Answer           -> f(n)                   */
