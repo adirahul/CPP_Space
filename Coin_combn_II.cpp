@@ -1,8 +1,10 @@
+
+/*Number of distinct ORDERED ways you can produce a money sum x using the available coins.*/
+
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 1e9+7;
 
-/*Number of distinct ORDERED ways you can produce a money sum x using the available coins.*/
 int main() {
   int n, target;
   cin >> n >> target;
@@ -11,10 +13,10 @@ int main() {
 
   vector<vector<int>> dp(n+1, vector<int> (target+1,0));
   
-  // State        :     dp[i][x] -> no of ways of getting sum x using first i coins
-  // Base case    :     dp[i][0] =0 , we have empty set with sum zero
-  // Transition   :     consider the ith coin,Either we didn't pick the coin, then there are dp[i-1][x] ways, otherwise,
-                         we picked the coin. Since we are allowed to pick it again, there are dp[i][x — value(ith coin)] (not dp[i-1][x —value(ith coin)]) ways
+ /*State        :     dp[i][x] -> no of ways of getting sum x using first i coins
+   Base case    :     dp[i][0] =0 , we have empty set with sum zero
+   Transition   :     consider the ith coin,Either we didn't pick the coin, then there are dp[i-1][x] ways, otherwise,
+                       we picked the coin. Since we are allowed to pick it again, there are dp[i][x — value(ith coin)] (not dp[i-1][x —value(ith coin)]) ways*/
  
  for(int i=0;i<n;i++){
     dp[i][0]=1;
