@@ -74,8 +74,8 @@ template <typename T>
                   }
           }
 
-          T sum(int i){                   // gives sum of array in range [0, i]  if i = 1101, we need BIT[13] {13, 13} + BIT[12] {9, 12} + BIT[8] {1, 8}
-                  T ans = 0;
+          T sum(int i){                   //Just due to extra curiosity=> gives sum of array in range [0, i - 1]  if i = 1101, we need BIT[13] {13, 13} + BIT[12] {9, 12} + BIT[8] {1, 8}
+                  T ans = 0;              // sum(13) = sum of the first 13 elements =  a[0] + a[1] + ... + a[12]          generally  sum(N) = a[0] + a[1] + ... + a[N - 1]
                   while(i > 0){
                       ans += BIT[i];
                       i -= i & -i;
