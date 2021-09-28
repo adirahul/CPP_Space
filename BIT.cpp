@@ -1,7 +1,7 @@
 /**
  *    author:  aditya_raj   
 **/    
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std; 
 #define int                            long long
 using ll                               = long long;
@@ -87,9 +87,9 @@ template <typename T>
                   return sum(R) - sum(L);
           }
     
-    	    T val(int i){	                    //return a[i]	(0-ind)
-		              return sum(i+1)-sum(i);
-	        }
+    	  T val(int i){	                    //return a[i] ,    (0-ind)
+		  return sum(i+1)-sum(i);
+	  }
     
           T get_id_val(int i){
                   return BIT[i];
@@ -111,7 +111,7 @@ template <typename T>
 
 
 
-int32_t main()
+signed main()
 {
   ios::sync_with_stdio(false); cin.tie(nullptr);
   
