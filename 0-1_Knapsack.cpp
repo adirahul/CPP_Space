@@ -11,8 +11,13 @@ class Solution
     {
 
     vector<vector<int>> dp(N + 1, vector<int> (W + 1, 0));
-    // dp[i][j] = max val obtained using first i items, max capacity being j
     
+    /*
+    * state        :     dp[i][j]      ->    dp[i][j] = max val obtained using first i items, max capacity being j
+    * base case    :     dp[0][j] = 0   ->   we cant get any value without any item
+    * transition   :     we can goto ith item from (i-1)th to either pick the item or leave it                                
+    * answer       :     dp[N][W]                    
+    */
     for(int i = 1; i <= N; i++)
     {
         for(int j = 0; j <= W; j++)
