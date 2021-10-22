@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//  Given strings S and T, Find one longest string that is a subsequence of both S and T.
+//  For longest palindromic subsequence in string A, replace S by A and T by reverse of A.
 
 int main() {
     string S, T;
