@@ -1,11 +1,26 @@
-
-/*Number of distinct ORDERED ways you can produce a money sum x using the available coins.*/
-
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 1e9+7;
 
+class solution{
+	public:
+   
+	int coin_change( vector<int> coin, int target )
+	{
+ 		 vector<ll> dp(target + 1, mod);  //minimum coins needed to get produce sum 'target'
+ 		 dp[0] = 0;  			  //0 way of getting sum = 0
+		
+ 		 for(int i = 1; i <= target; ++i)
+  			  for(int x : coin)
+    				  if(i - x >= 0)
+      				     dp[i] = min( dp[i], dp[i - x] + 1);
+  
+ 		 return (dp[target] == mod ? -1 : dp[target]);
+	}
+};
+
 int main() {
+			/*Number of distinct ORDERED ways you can produce a money sum x using the available coins.*/
   int n, target;
   cin >> n >> target;
   vector<int> x(n);
