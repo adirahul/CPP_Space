@@ -36,7 +36,7 @@ const ll infinity =                           1e+18;
 const double eps =                            1e-15;
 const int dx[4] =                             {1, 0, -1, 0};
 const int dy[4] =                             {0, 1, 0, -1};
-#define getunique(v)                          {sort(all(v)); v.resize(unique(all(v)) - v.end());}
+#define getunique(v)                          {sort(all(v)); v.resize(unique(all(v)) - v.begin());}
 template <class T, class C>                   void self_max(T &a, C b) { a > b ?: a = b; }
 template <class T, class C>                   void self_min(T &a, C b) { a < b ?: a = b; }
 
